@@ -1,4 +1,4 @@
-import * as logger from "winston";
+import logger from "winston";
 
 interface IBaseLogger {
   level: "error" | "warn" | "info" | "http" | "verbose" | "debug" | "silly";
