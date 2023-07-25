@@ -1,4 +1,4 @@
-import { VALIDATION_FAILED } from "utils/enums/error.enum";
+import { VALIDATION_FAILED } from "../utils/enums/error.enum";
 
 export class ValidationException extends Error {
   public status: number;

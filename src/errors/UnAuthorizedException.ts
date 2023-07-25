@@ -1,4 +1,4 @@
-import { UNAUTHORIZED } from "utils/enums/error.enum";
+import { UNAUTHORIZED } from "../utils/enums/error.enum";
 
 export class UnAuthorizedException extends Error {
   public status: number;
