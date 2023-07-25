@@ -1,9 +1,9 @@
-import { ValidationException } from "errors/ValidationException";
-import { getRequestBody } from "utils/http/getRequestBody";
+import { ValidationException } from "../errors/ValidationException";
+import { getRequestBody } from "../utils/http/getRequestBody";
 import { ZodSchema, z } from "zod";
 import { createRequest } from "../utils/http/request";
-import { Request } from "interfaces/request.interface";
-import { BODY_NOT_FOUND } from "utils/enums/error.enum";
+import { Request } from "../interfaces/request.interface";
+import { BODY_NOT_FOUND } from "../utils/enums/error.enum";
 
 export const withValidation = (schema: ZodSchema<any>) => {
   return (handler: (event: Request) => Promise<any>) => {

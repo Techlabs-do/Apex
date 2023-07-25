@@ -1,5 +1,5 @@
 import { APIGatewayProxyStructuredResultV2 } from "aws-lambda";
-import { IErrorInterface } from "interfaces/error.interface";
+import { IErrorInterface } from "../../interfaces/error.interface";
 
 export function factoryResponseBody(statusCode: number, body: string | string): APIGatewayProxyStructuredResultV2 {
   return { statusCode, body, isBase64Encoded: false };

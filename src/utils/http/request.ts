@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyEventPathParameters } from "aws-lambda";
-import { Request, User } from "interfaces/request.interface";
+import { Request, User } from "../../interfaces/request.interface";
 
 export const createRequest = (() => {
   let instance: Request;

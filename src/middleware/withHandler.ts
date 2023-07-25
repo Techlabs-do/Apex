@@ -1,19 +1,19 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
-import { NotFoundException } from "errors/NotFoundException";
-import { ValidationException } from "errors/ValidationException";
-import { IErrorInterface } from "interfaces/error.interface";
-import { generateLog } from "utils/logger";
+import { NotFoundException } from "../errors/NotFoundException";
+import { ValidationException } from "../errors/ValidationException";
+import { IErrorInterface } from "../interfaces/error.interface";
+import { generateLog } from "../utils/logger";
 import {
   respondWith200,
   respondWith401,
   respondWith404,
   respondWith422,
   respondWith500OrOther
-} from "utils/http/response";
+} from "../utils/http/response";
 import { createRequest } from "../utils/http/request";
-import { getUserIDFromJWT, getUserTypeFromJWT } from "utils/http/token";
-import { Request } from "interfaces/request.interface";
-import { UnAuthorizedException } from "errors/UnAuthorizedException";
+import { getUserIDFromJWT, getUserTypeFromJWT } from "../utils/http/token";
+import { Request } from "../interfaces/request.interface";
+import { UnAuthorizedException } from "../errors/UnAuthorizedException";
 
 const withHandler = (handler: (event: Request) => Promise<any>, info: string) => {
   return async (event: APIGatewayProxyEvent) => {

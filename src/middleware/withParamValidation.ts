@@ -1,6 +1,6 @@
-import { NotFoundException } from "errors/NotFoundException";
-import { Request } from "interfaces/request.interface";
-import { NOT_FOUND } from "utils/enums/error.enum";
+import { NotFoundException } from "../errors/NotFoundException";
+import { Request } from "../interfaces/request.interface";
+import { NOT_FOUND } from "../utils/enums/error.enum";
 
 export function withParamValidation(params?: Array<string>) {
   return (handler: (request: Request) => Promise<any>) => {
