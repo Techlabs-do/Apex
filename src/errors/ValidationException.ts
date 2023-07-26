@@ -8,6 +8,7 @@ export class ValidationException extends Error {
   constructor(fields: Object, message?: string) {
     super(message);
     this.status = 422;
+    this.name = "ValidationException";
     this.message = message ?? VALIDATION_FAILED;
     this.fields = fields;
   }

@@ -1,5 +1,6 @@
 export type IErrorInterface = {
   status: number;
+  name: string;
   code: string;
   message: string;
   fields: Object;

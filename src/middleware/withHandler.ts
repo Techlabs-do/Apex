@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
 import { NotFoundException } from "../errors/NotFoundException";
-import { ValidationException } from "../errors/ValidationException";
+// import { ValidationException } from "../errors/ValidationException";
 import { IErrorInterface } from "../interfaces/error.interface";
 import { generateLog } from "../utils/logger";
 import {
@@ -13,7 +13,7 @@ import {
 import { createRequest } from "../utils/http/request";
 import { getUserIDFromJWT, getUserTypeFromJWT } from "../utils/http/token";
 import { Request } from "../interfaces/request.interface";
-import { UnAuthorizedException } from "../errors/UnAuthorizedException";
+// import { UnAuthorizedException } from "../errors/UnAuthorizedException";
 
 const withHandler = (handler: (event: Request) => Promise<any>, info: string) => {
   return async (event: APIGatewayProxyEvent) => {
@@ -31,15 +31,15 @@ const withHandler = (handler: (event: Request) => Promise<any>, info: string) =>
     } catch (error) {
       const err = error as IErrorInterface;
 
-      if (error instanceof NotFoundException) {
+      if (err.name === "NotFoundException") {
         return respondWith404(err.message);
       }
 
-      if (error instanceof ValidationException) {
+      if (err.name === "ValidationException") {
         return respondWith422(err.fields, err.message);
       }
 
-      if (error instanceof UnAuthorizedException) {
+      if (err.name === "UnAuthorizedException") {
         return respondWith401(err);
       }
 

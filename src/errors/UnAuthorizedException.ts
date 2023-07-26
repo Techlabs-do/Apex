@@ -6,6 +6,7 @@ export class UnAuthorizedException extends Error {
   constructor() {
     super();
     this.status = 401;
+    this.name = "UnAuthorizedException";
     this.message = UNAUTHORIZED;
   }
 }
