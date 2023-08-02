@@ -7,6 +7,7 @@
   "private": false,
   "author": "Ibad",
   "license": "MIT",
+  "keywords": [ "apex", "framework", "web", "http", "nodejs", "rest", "app", "api", "aws", "mit" ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Techlabs-do/Apex.git"
